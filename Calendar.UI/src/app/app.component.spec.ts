@@ -34,17 +34,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ShipManagement'`, () => {
+  it(`should have as title 'CalendarManagement'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ShipManagement');
+    expect(app.title).toEqual('CalendarManagement');
   });
 
   // it('should render title', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   fixture.detectChanges();
   //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.content span')?.textContent).toContain('ShipManagement app is running!');
+  //   expect(compiled.querySelector('.content span')?.textContent).toContain('CalendarManagement app is running!');
   // });
   afterEach(() => {
     const fixture = TestBed.createComponent(AppComponent);

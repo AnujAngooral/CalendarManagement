@@ -22,7 +22,7 @@ export class MonthComponent implements OnInit {
       this.months = monthsData;
 
 
-      this.logger.debug(`Total ships returned: ${this.months.length}`);
+      this.logger.debug(`Total months returned: ${this.months.length}`);
 
     },
     (error) => {

@@ -10,20 +10,5 @@ RUN npm run build
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist/ShipManagement /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/CalendarManagement /usr/share/nginx/html
 
-# FROM node:14.17-alpine AS build
-
-# LABEL author="Anuj Angooral"
-
-# WORKDIR /var/www/angularnoderestfulservice
-
-# COPY package.json package-lock.json ./
-
-# RUN npm install
-
-# COPY . .
-
-# EXPOSE 3000
-
-# RUN npm run build

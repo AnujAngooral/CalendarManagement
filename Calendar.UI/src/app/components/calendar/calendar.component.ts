@@ -21,7 +21,7 @@ export class CalendarComponent implements OnInit {
 
   private getAppointment() {
     this.activatedRoute.paramMap.subscribe((params) => {
-      // if the ship id is present in the url,  we considered it to be an edit request.
+      // if the month id is present in the url,  we considered it to be an edit request.
       let monthId =  params.get('id');
         if(monthId){
           this.getAppointments(Number(monthId));
@@ -33,7 +33,7 @@ export class CalendarComponent implements OnInit {
     });
   }
 
-   // Gets the detail of a ship based on the id.
+   // Gets the detail of a appointment based on the month id.
    getAppointments(monthId: number) {
     this.appointmentService.getAppointmentsByMonth(monthId).subscribe((appointments: IAppointment[]) => {
       this.appointments=appointments;
