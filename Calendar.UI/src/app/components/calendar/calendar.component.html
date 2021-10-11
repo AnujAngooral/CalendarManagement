@@ -1,0 +1,35 @@
+
+<app-month></app-month>
+
+
+<mat-accordion>
+<mat-expansion-panel *ngFor="let appointment of appointments; " (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{appointment.date | date:'short'}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{appointment.description}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+   <span *ngIf="appointment; else noappointment">
+    <p>Description: {{appointment.description}}</p>
+    <p>Date: {{appointment.date | date:'short'}}</p>
+    <p>Organizer: {{appointment.organizer }}</p>
+    <p>Attendees: </p>
+
+      <ul>
+        <li *ngFor="let att of appointment.attendee">
+          {{att.user.userName}}
+        </li>
+      </ul>
+
+    </span>
+    <ng-template #noappointment>
+      <p>
+          No Appointment
+      </p>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>
